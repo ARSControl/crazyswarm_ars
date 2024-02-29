@@ -13,6 +13,7 @@ class Polynomial:
     self.p = p
 
   # evaluate a polynomial using horner's rule
+  # Horner's rule allows to evaluate a polynomial carrying out less iterations
   def eval(self, t):
     assert t >= 0
     x = 0.0

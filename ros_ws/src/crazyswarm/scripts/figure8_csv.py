@@ -19,10 +19,11 @@ if __name__ == "__main__":
         for cf in allcfs.crazyflies:
             cf.uploadTrajectory(0, 0, traj1)
 
-        allcfs.takeoff(targetHeight=1.0, duration=2.0)
+        allcfs.takeoff(targetHeight=0.5, duration=2.0)
         timeHelper.sleep(2.5)
         for cf in allcfs.crazyflies:
-            pos = np.array(cf.initialPosition) + np.array([0, 0, 1.0])
+            initialPosition = cf.position()
+            pos = np.array(initialPosition) + np.array([0, 0, 0.5])
             cf.goTo(pos, 0, 2.0)
         timeHelper.sleep(2.5)
 
